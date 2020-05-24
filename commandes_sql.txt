@@ -1,0 +1,36 @@
+******** Commandes SQL pour la création des tables, et l'insertion sur SQLWorkbench :  ********
+
+CREATE TABLE Ens
+ 	(id_ens INTEGER PRIMARY KEY AUTO_INCREMENT,
+	 nom VARCHAR (255),
+	 prenom VARCHAR (255));
+	 
+CREATE TABLE Module
+ 	(id_module INTEGER PRIMARY KEY AUTO_INCREMENT,
+	 nom_module VARCHAR (255),
+	 ens INTEGER,
+	 FOREIGN KEY(ens) REFERENCES Ens(id_ens));
+	
+
+INSERT INTO Ens (nom,prenom) VALUES ('nom1','prenom1');
+commit;
+INSERT INTO Ens (nom,prenom) VALUES ('nom2','prenom2');
+commit;
+INSERT INTO Ens (nom,prenom) VALUES ('nom3','prenom3');
+commit;
+INSERT INTO Module (nom_module,ens) VALUES ('mod1',1);
+commit;
+INSERT INTO Module (nom_module,ens) VALUES ('mod2',2);
+commit;
+INSERT INTO Module (nom_module,ens) VALUES ('mod3',3);
+commit;
+INSERT INTO Module (nom_module,ens) VALUES ('mod4',1);
+commit;
+INSERT INTO Module (nom_module,ens) VALUES ('mod5',2);
+commit;
+
+show tables;
+select * from Module;
+
+/// Execution : Ctrl+Entree
+
